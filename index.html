@@ -1,36 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PRASTA LINK TREE</title>
-  
-  <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-0kG1V7WzLgfIJ7+xmC5UvL1ZfD9h1azAV2Q7K0ElPCN6A9TXj1CbUIvwb8B0lAIk" crossorigin="anonymous">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Slabo+27px&display=swap" rel="stylesheet">
-  
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <link rel="stylesheet" href="MAIN.css">
+    <meta charset="UTF-8">
+    <title>Pertanyaan Rahasia 🤭</title>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to top, #ffe4e1, #ffc0cb);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #ff4d6d;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+            animation-delay: 1s;
+        }
+
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+            left: 120px;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* LOVE */
+        .love {
+            position: absolute;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-800px); opacity: 0; }
+        }
+    </style>
 </head>
+
 <body>
-  <section>
-    <main>
-      <img src="Gambar.png">
-      <h2>Prasta</h2>
-      <a href="https://www.instagram.com/m.prasta17?igsh=NWpub2VoZTBxbmxw"><i class="fa-brands fa-instagram"></i>Instagram</a>
-      <a href="https://www.tiktok.com/@muhammadprastainsia?_t=ZS-8u1DsP2OQcq&_r=1"><i class="fa-brands fa-tiktok"></i>Tiktok</a>
-      <a href="https://github.com/PrastaX"><i class="fa-brands fa-github"></i>Github</a>
-    </main>
-    <footer>
-      <p>
-    ♥️ Made With Prasta ♥️
-      </p>
-    </footer>
-  </section>
+
+    <h1>Apakah kamu suka aku? 🫣❤️</h1>
+
+    <div class="btn-container">
+        <button id="yesBtn">Iya ❤️</button>
+        <button id="noBtn">Tidak 💔</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", function() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            noBtn.style.position = "fixed";
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            window.location.href = "https://wa.me/628xxxxxxxxxx?text=Aku%20juga%20suka%20kamu%20🫰❤️";
+        });
+
+        function createLove() {
+            const love = document.createElement("div");
+            love.classList.add("love");
+            love.innerHTML = "❤️";
+
+            love.style.left = Math.random() * window.innerWidth + "px";
+            love.style.fontSize = (Math.random() * 20 + 15) + "px";
+            love.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+            document.body.appendChild(love);
+
+            setTimeout(() => love.remove(), 5000);
+        }
+
+        setInterval(createLove, 300);
+    </script>
+
 </body>
-</html>
+  </html>

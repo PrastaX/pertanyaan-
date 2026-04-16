@@ -1,132 +1,131 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertanyaan Rahasia 🤭</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertanyaan 🤭</title>
 
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to top, #ffe4e1, #ffc0cb);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, #ffe4e1, #ffc0cb);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 22px;
-            color: #ff4d6d;
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards;
-            padding: 0 15px;
-        }
+    h1 {
+      font-size: 22px;
+      color: #ff4d6d;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      padding: 0 15px;
+    }
 
-        .btn-container {
-            margin-top: 25px;
-            display: flex;
-            gap: 15px;
-        }
+    .btn-container {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+    }
 
-        button {
-            padding: 18px 28px;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            opacity: 0;
-            animation: fadeIn 1.5s ease forwards;
-        }
+    button {
+      padding: 18px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
 
-        #yesBtn {
-            background-color: #4CAF50;
-            color: white;
-            animation-delay: 0.8s;
-        }
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+      animation-delay: 0.8s;
+    }
 
-        #noBtn {
-            background-color: #f44336;
-            color: white;
-            position: relative;
-            animation-delay: 1s;
-        }
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+      position: relative;
+      animation-delay: 1s;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        /* LOVE */
-        .love {
-            position: fixed;
-            bottom: -20px;
-            font-size: 18px;
-            animation: floatUp linear infinite;
-        }
+    /* LOVE */
+    .love {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: floatUp linear infinite;
+    }
 
-        @keyframes floatUp {
-            from { transform: translateY(0); opacity: 1; }
-            to { transform: translateY(-100vh); opacity: 0; }
-        }
-    </style>
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>Apakah kamu suka aku? 🫣❤️</h1>
+  <h1>Apakah kamu suka aku? 🫣❤️</h1>
 
-    <div class="btn-container">
-        <button id="yesBtn">Iya ❤️</button>
-        <button id="noBtn">Tidak 💔</button>
-    </div>
+  <div class="btn-container">
+    <button id="yesBtn">Iya ❤️</button>
+    <button id="noBtn">Tidak 💔</button>
+  </div>
 
-    <script>
-        const noBtn = document.getElementById("noBtn");
+  <script>
+    const noBtn = document.getElementById("noBtn");
 
-        function moveButton() {
-            const btnWidth = noBtn.offsetWidth;
-            const btnHeight = noBtn.offsetHeight;
+    function moveButton() {
+      const btnWidth = noBtn.offsetWidth;
+      const btnHeight = noBtn.offsetHeight;
 
-            const maxX = window.innerWidth - btnWidth;
-            const maxY = window.innerHeight - btnHeight;
+      const maxX = window.innerWidth - btnWidth;
+      const maxY = window.innerHeight - btnHeight;
 
-            const x = Math.random() * maxX;
-            const y = Math.random() * maxY;
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
 
-            noBtn.style.position = "fixed";
-            noBtn.style.left = x + "px";
-            noBtn.style.top = y + "px";
-        }
+      noBtn.style.position = "fixed";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
 
-        // buat HP: pakai touchstart juga
-        noBtn.addEventListener("mouseover", moveButton);
-        noBtn.addEventListener("touchstart", moveButton);
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("touchstart", moveButton);
 
-        document.getElementById("yesBtn").addEventListener("click", function() {
-            window.location.href = "https://wa.me/6281532850590?text=Aku%20juga%20suka%20kamu%20🫰❤️";
-        });
+    document.getElementById("yesBtn").addEventListener("click", function() {
+      window.location.href = "https://wa.me/6281532850590?text=Aku%20juga%20suka%20kamu%20🫰❤️";
+    });
 
-        function createLove() {
-            const love = document.createElement("div");
-            love.classList.add("love");
-            love.innerHTML = "❤️";
+    function createLove() {
+      const love = document.createElement("div");
+      love.classList.add("love");
+      love.innerHTML = "❤️";
 
-            love.style.left = Math.random() * window.innerWidth + "px";
-            love.style.fontSize = (Math.random() * 15 + 15) + "px";
-            love.style.animationDuration = (Math.random() * 2 + 2) + "s";
+      love.style.left = Math.random() * window.innerWidth + "px";
+      love.style.fontSize = (Math.random() * 15 + 15) + "px";
+      love.style.animationDuration = (Math.random() * 2 + 2) + "s";
 
-            document.body.appendChild(love);
+      document.body.appendChild(love);
 
-            setTimeout(() => love.remove(), 4000);
-        }
+      setTimeout(() => love.remove(), 4000);
+    }
 
-        setInterval(createLove, 300);
-    </script>
+    setInterval(createLove, 300);
+  </script>
 
 </body>
 </html>
